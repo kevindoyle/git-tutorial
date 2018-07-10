@@ -69,22 +69,22 @@ No commits yet
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	new_file.txt
+	my_file.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 Here `git status` is telling me that I have an untracked file called
-`new_file.txt`. Untracked files are files that git is not paying attention to.
+`my_file.txt`. Untracked files are files that git is not paying attention to.
 They have no stored version history, and will not be sent to GitHub.
 
-I want git to track `new_file.txt`, so I add it
+I want git to track `my_file.txt`, so I add it
 
 ```
-git add new_file.txt
+git add my_file.txt
 ```
 
-The output of `git status` is different now that `new_file.txt` is tracked:
+The output of `git status` is different now that `my_file.txt` is tracked:
 
 ```
 $ git status
@@ -95,7 +95,7 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   new_file.txt
+	new file:   my_file.txt
 ```
 
 Instead of showing me an untracked file, `git status` now displays a change
@@ -111,7 +111,7 @@ time. Making a commit is done with the command `git commit`
 $ git commit -m "add a new, empty file to this repo"
 [master (root-commit) 2c98290] add a new, empty file to this repo
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 new_file.txt
+ create mode 100644 my_file.txt
 
 ```
 
@@ -186,7 +186,7 @@ If you visit your repository on GitHub now, the file will be there.
 Making changes
 ----------------------
 Now you have a file stored, let's make changes and save them. Open
-`new_file.txt`, change it, and save. Now check the state of the repo.
+`my_file.txt`, change it, and save. Now check the state of the repo.
 
 ```
 $ git status
@@ -197,16 +197,16 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   new_file.txt
+	modified:   my_file.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 You can see your change compared to the previously committed version of
-`new_file.txt` using `git diff`:
+`my_file.txt` using `git diff`:
 
 ```
-$ git diff new_file.txt
+$ git diff my_file.txt
 ```
 
 Now stage the file with `git add`, run `git commit` to commit the change and
@@ -247,7 +247,7 @@ To checkout the branch, run
 
 ```
 $ git checkout experiment-1
-M	new_file.txt
+M	my_file.txt
 Switched to branch 'experiment-1'
 ```
 
