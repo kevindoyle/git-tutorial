@@ -6,34 +6,21 @@
 from __future__ import print_function
 import sys
 
-# Average blocks per stop light
-LIGHT_FREQUENCY_CONSTANT = 5
-
-# Average seconds spent waiting for a crossing sign
-LIGHT_WAIT_TIME = 30 
-
-# Average seconds waiting when a car is inching into the crosswalk and you
-# have to wait to make eye contact so they don't run over you.
-CAR_CREEP_WAIT_TIME = 2
-
-# Probability that a car will be creeping at any given street crossing
-CAR_CREEP_PROBABILITY = 0.25
-
-def light_encounters(blocks):
+def light_encounters(blocks, light_freq=5):
     """Calculate the number of street lights encounted for given blocks walked.
     """
-    return blocks / LIGHT_FREQUENCY_CONSTANT
+    return blocks / light_freq
 
-def car_encounters(blocks):
+def car_encounters(blocks, creep_prob=0.25):
     """Calculate the number of cars encountered for given blocks walked."""
     crossings = blocks - 1
-    return crossings * CAR_CREEP_PROBABILITY
+    return crossings * creep_prob
 
-def wait_time(lights, cars):
+def wait_time(lights, cars, light_wait=30, car_wait=2):
     """Calculate time spent waiting for given encounter counts."""
-    light_wait = lights * LIGHT_WAIT_TIME
-    car_wait = cars * CAR_CREEP_WAIT_TIME
-    return light_wait + car_wait
+    l_time = lights * light_wait
+    c_time = cars * car_wait
+    return l_time + c_time
 
 if __name__ == '__main__':
     travel_distance = int(sys.argv[1])  # units: city blocks
