@@ -179,5 +179,84 @@ Finally, push the change to your remote.
 git push
 ```
 
+Branches
+-----------------------------
+Branches allow for divergent commit histories. The default branch is called `master`. To view a list of branches, and see which one is currently checked out, run `git branch`.
 
+```
+$ git branch
+* master
+```
+
+Create a new branch
+
+```
+$ git branch experiment-1
+```
+
+The new branch will now show up in the branch list
+
+```
+$ git branch
+  experiment-1
+* master
+```
+
+To checkout the branch, run
+
+```
+$ git checkout experiment-1
+M	new_file.txt
+Switched to branch 'experiment-1'
+```
+
+Any commits made to this branch will not show up on master. The act of adding commits from this branch to master is called a merge. Run
+
+```
+$ git merge --help
+```
+
+For more details :)
+
+
+
+Revisit old versions
+------------------------------
+Get the commit hash
+```
+$ git log
+```
+Then checkout that hash
+```
+git checkout 1a2b3c4d
+```
+
+
+Releases
+----------------------------
+Releases can be used to identify important moments in a codebase's history and make that state of the code easy to access.
+
+For example, a release could be tagged whenever the current code state is used to generate results that are submitted to a journal. Then, reproducing the result could be as simple as downloading the .zip file with that version of the code.
+
+
+An exercise
+--------------------------------
+Clone this repository: https://github.com/kevindoyle/git-tutorial
+```
+$ cd ~/repos/
+$ git clone https://github.com/kevindoyle/git-tutorial.git
+$ cd git-tutorial
+```
+
+Checkout a new branch for your commits.
+
+Rewrite the code in `street_crossing.py` so that it fits the template started in `exercise_stub.py`. Make incremental changes and commit each step along the way.
+
+Push your branch to the repository and open a pull request against the existing branch called `merge-exercises-into-this-branch`.
+
+For pointers, my solution is on the branch `kevins-refactor-exercise-solution`.
+
+
+Credits
+------------------------------------
 Some segments of this document were copied from https://github.com/TuftsBCB/git-tutorial
