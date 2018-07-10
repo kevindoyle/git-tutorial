@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
 """Time spent waiting to cross the street in Cambridge estimate model.
+
+To run this script:
+    $ python street_crossing.py 10
+
+Where 10 is the number of city blocks being traveled. The output of the script
+will be an estimate for the ammount of time spent waiting to cross the street.
 """
 
 from __future__ import print_function
@@ -29,4 +35,3 @@ creeping_car_encounters = street_crossings * CAR_CREEP_PROBABILITY
 wait_time = (lights_encountered * LIGHT_WAIT_TIME) + (creeping_car_encounters * CAR_CREEP_WAIT_TIME) 
 
 print("wait time:", wait_time, "seconds")
-

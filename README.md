@@ -317,6 +317,9 @@ $ git clone https://github.com/kevindoyle/git-tutorial.git
 $ cd git-tutorial
 ```
 
+The respository contains a script called `street_crossing.py`. Look the the
+script's doc string to see what it does and how to run it.
+
 Checkout a new branch for your commits. This command is shorthand for creating
 a new branch and checking it out in one step:
 
