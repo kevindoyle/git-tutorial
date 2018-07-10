@@ -19,14 +19,27 @@ CAR_CREEP_WAIT_TIME = 2
 # Probability that a car will be creeping at any given street crossing
 CAR_CREEP_PROBABILITY = 0.25
 
-travel_distance = int(sys.argv[1])  # units: city blocks
+def light_encounters(blocks):
+    """Calculate the number of street lights encounted for given blocks walked.
+    """
+    return blocks / LIGHT_FREQUENCY_CONSTANT
 
-lights_encountered = travel_distance / LIGHT_FREQUENCY_CONSTANT
+def car_encounters(blocks):
+    """Calculate the number of cars encountered for given blocks walked."""
+    crossings = blocks - 1
+    return crossings * CAR_CREEP_PROBABILITY
 
-street_crossings = travel_distance - 1
-creeping_car_encounters = street_crossings * CAR_CREEP_PROBABILITY
+def wait_time(lights, cars):
+    """Calculate time spent waiting for given encounter counts."""
+    light_wait = lights * LIGHT_WAIT_TIME
+    car_wait = cars * CAR_CREEP_WAIT_TIME
+    return light_wait + car_wait
 
-wait_time = (lights_encountered * LIGHT_WAIT_TIME) + (creeping_car_encounters * CAR_CREEP_WAIT_TIME) 
+if __name__ == '__main__':
+    travel_distance = int(sys.argv[1])  # units: city blocks
 
-print("wait time:", wait_time, "seconds")
+    le = light_encounters(travel_distance)
+    ce = car_encounters(travel_distance)
 
+    wait = wait_time(le, ce)
+    print("wait time:", wait, "seconds")
