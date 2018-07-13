@@ -346,9 +346,8 @@ If you get stuck, my solution is on the branch
 Misc resources
 ------------------------
 
-["a fairly comprehensive guide to recovering from what you did not mean to do
-when using git"](http://sethrobertson.github.io/GitFixUm/fixup.html)
-
+- ["a fairly comprehensive guide to recovering from what you did not mean to do when using git"](http://sethrobertson.github.io/GitFixUm/fixup.html)
+- ["write down a command-line to see the help text that matches each argument"](https://explainshell.com/)
 
 Credits
 ------------------------------------
