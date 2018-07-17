@@ -295,8 +295,11 @@ Then checkout that hash
 ```
 $ git checkout 1a2b3c4d
 ```
-
-
+When you are done with the old version, return to the current state of your
+code by checking out a branch. For example,
+```
+$ git checkout master
+```
 
 
 Releases
