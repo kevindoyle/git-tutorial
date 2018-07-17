@@ -83,7 +83,7 @@ They have no stored version history, and will not be sent to GitHub.
 I want git to track `my_file.txt`, so I add it
 
 ```
-git add my_file.txt
+$ git add my_file.txt
 ```
 
 The output of `git status` is different now that `my_file.txt` is tracked:
@@ -158,7 +158,7 @@ Run the following command, but replace `kevindoyle` with your own username, and
 this tutorial.
 
 ```
-git remote add origin https://github.com/kevindoyle/tutorial-repo.git
+$ git remote add origin https://github.com/kevindoyle/tutorial-repo.git
 ```
 
 This creates a remote named "origin" ("origin" in a commonly used name for the
@@ -217,7 +217,7 @@ see your feshly created commit with `git log`.
 Finally, push the change to your remote.
 
 ```
-git push
+$ git push
 ```
 
 Branches
@@ -293,7 +293,7 @@ $ git log
 ```
 Then checkout that hash
 ```
-git checkout 1a2b3c4d
+$ git checkout 1a2b3c4d
 ```
 
 
