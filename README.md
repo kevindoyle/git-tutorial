@@ -1,5 +1,7 @@
 # git-tutorial
-an intro to git and github
+an intro to git and github. this introduction is more focused on version
+control for personal work and less focused on collaborating on shared code
+bases.
 
 Help and documentation
 ------------------------
