@@ -30,7 +30,11 @@ def light_encounters(blocks, light_freq=LIGHT_FREQUENCY_CONSTANT):
     "calculate the number of lights encountered given the numebr of blocks"
     return blocks / light_freq
 
-
+def car_encounters(blocks, creep_prob=CAR_CREEP_PROBABILITY):
+     """Calculate the number of cars encountered for given blocks walked."""
+     crossings = blocks - 1
+     return crossings * creep_prob
+    
 travel_distance = int(sys.argv[1])  # units: city blocks
 
 lights_encountered = travel_distance / LIGHT_FREQUENCY_CONSTANT
